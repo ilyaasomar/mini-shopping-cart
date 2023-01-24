@@ -1,6 +1,10 @@
 import React from "react";
-
+import useShop from "../ShopContext";
 const Product = ({ product }) => {
+  const { addToCart } = useShop();
+  const handleAddToCart = () => {
+    addToCart(product);
+  };
   return (
     <div
       className="card"
@@ -15,7 +19,9 @@ const Product = ({ product }) => {
         <span>{product.name}</span>
         <span>{product.price}</span>
       </div>
-      <button className="btn btn-primary">+</button>
+      <button className="btn btn-primary" onClick={handleAddToCart}>
+        +
+      </button>
     </div>
   );
 };

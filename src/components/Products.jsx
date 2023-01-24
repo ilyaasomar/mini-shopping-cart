@@ -45,11 +45,13 @@ const products = [
   },
 ];
 const Products = () => {
-  return products.map((product) => (
+  return (
     <div className="grid">
-      <Product product={product} />
+      {products.map((product) => (
+        <Product product={product} />
+      ))}
     </div>
-  ));
+  );
 };
 
 export default Products;
