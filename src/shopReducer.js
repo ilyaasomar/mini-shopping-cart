@@ -8,6 +8,11 @@ const shopReducer = (state, action) => {
   switch (type) {
     case "ADD_TO_CART":
       return { ...state, products: payload.products };
+
+    case "REMOVE_FROM_CART":
+      return { ...state, products: payload.products };
+    case "CALCULATE_TOTAL":
+      return { ...state, total: payload };
     default:
       throw new Error("Unknown Reducer");
   }
