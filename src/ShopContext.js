@@ -8,7 +8,6 @@ export const ShopProvider = ({ children }) => {
   const addToCart = (products) => {
     const updatedProduct = state.products.concat(products);
     calculateTotal(updatedProduct);
-
     dispatch({ type: "ADD_TO_CART", payload: { products: updatedProduct } });
   };
   const removeFromCart = (product) => {
